@@ -2,7 +2,7 @@ const micOnBtn = document.getElementById("mic-on");
 const micOffBtn = document.getElementById("mic-off");
 
 const copyBtn = document.getElementById("copy-btn");
-const closeBtn = document.getElementById("close-btn");
+const closeBtn = document.getElementById("clear-btn");
 
 const textBox = document.getElementById("text-receiver");
 
