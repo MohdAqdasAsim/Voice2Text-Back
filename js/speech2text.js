@@ -34,9 +34,9 @@ micOffBtn.addEventListener("click",() => {
 });
 
 copyBtn.addEventListener("click", () => {
-  navigator.clipboard.writeText(textBox.textContent);
+  navigator.clipboard.writeText(textBox.value);
 })
 
 closeBtn.addEventListener("click", () => {
-  textBox.textContent = "";
+  textBox.value = "";
 })
