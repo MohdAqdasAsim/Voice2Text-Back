@@ -1,0 +1,62 @@
+#mic-on {
+  color: #fff;
+}
+
+#mic-off {
+  color: #fff;
+}
+
+.flicker {
+  animation: flick infinite ease-in-out 1s alternate-reverse;
+}
+
+@keyframes flick {
+  0% {
+    color: #fff;
+  }
+  100% {
+    color: #ff2963;
+  }
+}
+
+#speech2text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-receiver {
+  width: 35%;
+  height: 40%;
+  outline: none;
+  border: none;
+  background: #403d84;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#text-receiver::placeholder {
+  font-size: 16px;
+  color: #ddd;
+}
+
+#buttons {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#buttons button {
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff2963;
+  padding: 10px 30px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 35px;
+}

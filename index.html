@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice2Text&Back</title>
+
+  <!-- FavIcon -->
+  <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+
+  <!-- FontAwesomeScript -->
+  <script src="https://kit.fontawesome.com/72e8700359.js" crossorigin="anonymous"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/text2speech.css">
+  <link rel="stylesheet" href="css/speeech2text.css">
+
+  <!-- Scripts -->
+  <script src="js/script.js" defer></script>
+  <script src="js/text2speech.js" defer></script>
+  <script src="js/speech2text.js" defer></script>
+</head>
+
+<body>
+  <!-- TextToSpeech Code -->
+  <div class="container active" id="text2speech-container">
+    <div id="text2speech">
+      <h1>Text To Speech <span>Converter</span></h1>
+      <textarea name="text2speech" id="text-holder" placeholder="Write anything here.."></textarea>
+      <div>
+        <select name="options" id="voice-select"></select>
+        <button id="listen-btn"><i class="fa-solid fa-play"></i>&ThickSpace;<span>Play</span></button>
+        <button id="stop-btn" style="display: none"><i
+            class="fa-solid fa-stop"></i>&ThickSpace;<span>Stop</span></button>
+      </div>
+      <button id="customize-btn">Customize</button>
+    </div>
+    <div id="customize-panel" style="display: none;">
+      <div>
+        <div id="cancel">
+          <i class="fa-solid fa-xmark fa-2xl" style="color: #ddd;"></i>
+        </div>
+        <h1>Customize</h1>
+        <label for="rate">Speed</label>
+        <input type="range" name="rate" id="sound-rate" min="0" max="10" step="0.5" value="1">
+        <label for="pitch">Pitch</label>
+        <input type="range" name="pitch" id="sound-pitch" min="0" max="2" step="0.5" value="1">
+        <label for="volume">Volume</label>
+        <input type="range" name="volume" id="sound-volume" min="0" max="1" step="0.1" value="1">
+      </div>
+    </div>
+  </div>
+
+  <!-- SpeechToText Code -->
+  <div class="container" id="speech2text-container">
+    <h1>
+      Speech To Text&ThinSpace;
+      <span>Converter</span>
+      &ThickSpace;
+      <span id="mic-on">
+        <i class="fa-solid fa-microphone-lines fa-xl"></i>
+      </span>
+      <span id="mic-off" style="display: none;">
+        <i class="fa-solid fa-microphone fa-xl"></i>
+      </span>
+    </h1>
+    <textarea name="text-receiver" id="text-receiver" placeholder="Click the mic to start"></textarea>
+    <div id="buttons">
+      <button id="copy-btn">Copy</button>
+      <button id="clear-btn">Clear</button>
+    </div>
+  </div>
+
+  <!-- Buttons to sitch between TTS and STT -->
+  <div id="switch-box">
+    <button class="switch" id="switch-right"><i class="fa-solid fa-arrow-right fa-2xl"></i></button>
+    <button class="switch" id="switch-left" style="display: none;"><i
+        class="fa-solid fa-arrow-left fa-2xl"></i></button>
+  </div>
+</body>
+</html>
