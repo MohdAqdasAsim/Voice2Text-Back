@@ -44,6 +44,20 @@
   color: #ddd;
 }
 
+@media (max-width: 500px) {
+  #text-receiver {
+    width: 60%;
+    height: 40%;
+  }
+}
+
+@media (min-width: 1070px) {
+  #text-receiver {
+    width: 40%;
+  }
+}
+
+
 #buttons {
   width: 80%;
   display: flex;

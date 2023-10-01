@@ -25,7 +25,7 @@
   color: #ddd;
 }
 
-#text2speech > div {
+#text2speech>div {
   width: 39%;
   height: 5%;
   display: flex;
@@ -34,13 +34,14 @@
 }
 
 @media (max-width: 1070px) {
-  #text2speech > div {
+  #text2speech>div {
     flex-direction: column;
     margin-left: 0%;
     gap: 10px;
   }
 
-  #listen-btn,#stop-btn {
+  #listen-btn,
+  #stop-btn {
     align-self: center;
     width: 98%;
   }
@@ -54,7 +55,47 @@
   }
 }
 
-#listen-btn,#stop-btn,#customize-btn {
+@media (max-width: 500px) {
+  #text-holder {
+    width: 60%;
+    height: 40%;
+  }
+
+  #listen-btn,
+  #stop-btn {
+    align-self: center;
+    width: calc(100% + 100px);
+  }
+
+  #voice-select {
+    width: calc(100% + 100px);
+    transform: translateX(-50px);
+  }
+
+  #customize-btn {
+    /* align-self: center; */
+    margin-top: 0%;
+    border-radius: 10px;
+    transform: scaleX(1.6) translateY(50px);
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+#cz-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.2%;
+}
+
+#listen-btn,
+#stop-btn,
+#customize-btn {
   font-size: 16px;
   color: #fff;
   background-color: #ff2963;
@@ -77,7 +118,7 @@
 }
 
 #customize-btn {
-  width: 38%;
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -91,7 +132,7 @@
   pointer-events: none;
 }
 
-#customize-panel > div {
+#customize-panel>div {
   position: relative;
   width: 60%;
   height: 80%;
@@ -105,14 +146,14 @@
   padding-top: 3%;
 }
 
-#customize-panel > div > label {
+#customize-panel>div>label {
   color: #ddd;
   font-size: 20px;
   font-weight: 700;
 }
 
 #cancel {
-   display: flex;
+  display: flex;
   justify-content: flex-end;
   width: 100%;
   margin-right: 10%;

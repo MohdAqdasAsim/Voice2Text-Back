@@ -7,24 +7,40 @@ const closeBtn = document.getElementById("clear-btn");
 const textBox = document.getElementById("text-receiver");
 
 const recognition = new webkitSpeechRecognition();
-recognition.continuous = true;
+recognition.continuous = false;
 recognition.lang = "en-US";
 recognition.interimResults = true;
 
-micOnBtn.addEventListener("click",() => {
+micOnBtn.addEventListener("click", () => {
   micOnBtn.style.display = "none";
   micOffBtn.style.display = "inline-block";
-  
+
   micOffBtn.classList.add("flicker");
 
   recognition.start();
 
-  recognition.addEventListener("result",(e) => {
-    textBox.innerText = e.results[0][0].transcript;
-  })
+  recognition.onend = () => {
+    recognition.start();
+  }
+  
+  var finalTranscripts = "";
+  recognition.onresult = function (event) {
+    var interimTranscripts = "";
+    for (var i = event.resultIndex; i < event.results.length; i++) {
+      var transcript = event.results[i][0].transcript;
+      transcript.replace("\n", "<br>");
+      if (event.results[i].isFinal) {
+        finalTranscripts += transcript;
+      }
+      else {
+        interimTranscripts += transcript;
+      }
+      textBox.value = finalTranscripts + " " + interimTranscripts;
+    }
+  };
 });
 
-micOffBtn.addEventListener("click",() => {
+micOffBtn.addEventListener("click", () => {
   micOffBtn.style.display = "none";
   micOnBtn.style.display = "inline-block";
 
